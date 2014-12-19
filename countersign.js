@@ -93,6 +93,9 @@ Countersign.prototype.setTest = function (p1, p2) {
     this.settings[p1] = p2;
   }
 
+  // Allow method chaining.
+  return this;
+
 };
 
 /*
@@ -120,11 +123,14 @@ Countersign.prototype.addTest = function (key, fn) {
     this.settings[key] = true;
   }
 
+  // Allow method chaining.
+  return this;
+
 };
 
 /*
- * Test the given password and pass true to the callback if the password gets
- * the minimum score.
+ * Test the given password and pass true to the callback if the password
+ * achieves the minimum score. Test methods cannot be chained further.
  * callback(err, success, result);
  */
 Countersign.prototype.test = function (input, minScore, callback) {
@@ -137,7 +143,7 @@ Countersign.prototype.test = function (input, minScore, callback) {
 };
 
 /*
- * Score the given password.
+ * Score the given password. Test methods cannot be chained further.
  * callback(err, score, result);
  */
 Countersign.prototype.score = function (input, callback) {
