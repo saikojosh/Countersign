@@ -1,5 +1,5 @@
 # Countersign
-Countersign is **password strength testing made simple**. Countersign will apply a range of different tests to a password and will give it a score. Each successful test will score 1 point, if you add 10 tests you'll score a maximum of 10 points!
+Countersign is **password strength testing made simple**. Countersign will apply a range of different tests to a password and will give it a score. Each successful test will score 1 point, if you add 10 tests you'll score a maximum of 10 points! You can even add your own custom tests.
 
 You can use `cs.score()` to get the score, or `cs.test()` to ensure the password meets a minium score threshold. Both methods will receive a `result` parameter containing the detailed test results.
 
