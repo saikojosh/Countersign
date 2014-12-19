@@ -1,14 +1,14 @@
 # Countersign
-Countersign is **password strength testing made simple**. Countersign will apply a range of different tests to a password and will give it a score. Each successful test will score 1 point, if you add 10 tests you'll score a maximum of 10 points! You can even add your own custom tests.
+Countersign is **password strength testing made simple**. Countersign will apply a range of different tests to a password and will give it a score. Each successful test will score 1 point; if you add 10 tests you'll score a maximum of 10 points! You can even add your own custom tests.
 
-You can use `cs.score()` to get the score, or `cs.test()` to ensure the password meets a minium score threshold. Both methods will receive a `result` parameter containing the detailed test results.
+You can use `cs.score()` to get the score, or `cs.test()` to ensure the password meets a minimum score threshold. Both methods will receive a `result` parameter containing the detailed test results.
 
 
 # Tests
 
 ### Inbuilt Tests
 These tests come as standard, to use them specify `true` or a number to represent the required number of characters, e.g. if you specify `digits: 4` the password will need to contain 4 separate digits to pass the test. All tests are *off* by default.
-* **length** - Minium length of the password.
+* **length** - Minimum length of the password.
 * **letters** - Tests for letters (case insensitive).
 * **digits** - Tests for digits 0-9.
 * **uppercase** - Tests for uppercase letters.
@@ -132,7 +132,7 @@ cs.addTest('customTest', function (input, setting, finish) {
 * **success** - Specify a boolean to indicate whether the test has passed.
 
 ##### Error Handling
-If you pass an error as the first paremeter of `finish()` it will not be thrown, instead it will be passed up the chain to your final callback given to either `cs.test()` or `cs.score()`.
+If you pass an error as the first parameter of `finish()` it will not be thrown, instead it will be passed up the chain to your final callback given to either `cs.test()` or `cs.score()`.
 
 
 ### > cs.test()
@@ -149,8 +149,8 @@ cs.test('abc123', 5, function (err, success, result) { ... });
 * **callback** - The function to run after testing is complete.
 
 ##### Callback Parameters
-* **err** - If an error has occured it will be given here, otherwise `null`.
-* **success** - True if the minium score has been achieved.
+* **err** - If an error has occurred it will be given here, otherwise `null`.
+* **success** - True if the minimum score threshold has been achieved.
 * **result** - A hash of all the results.
 
 ### > cs.score()
@@ -166,6 +166,6 @@ cs.score('abc123', function (err, score, result) { ... });
 * **callback** - The function to run after testing is complete.
 
 ##### Callback Parameters
-* **err** - If an error has occured it will be given here, otherwise `null`.
+* **err** - If an error has occurred it will be given here, otherwise `null`.
 * **score** - The score given to the password (i.e. the number of tests successfully passed).
 * **result** - A hash of all the results.
