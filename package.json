@@ -1,0 +1,19 @@
+{
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/saikojosh/Countersign.git"
+  },
+  "name": "countersign",
+  "version": "0.0.1",
+  "main": "countersign.js",
+  "author": "Josh Cole <saikojosh@gmail.com>",
+  "contributors": [
+    {
+      "name": "Josh Cole",
+      "email": "saikojosh@gmail.com"
+    }
+  ],
+  "dependencies": {
+    "async": "0.9.x",
+  }
+}
