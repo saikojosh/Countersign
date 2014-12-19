@@ -6,6 +6,9 @@
     "type": "git",
     "url": "https://github.com/saikojosh/Countersign.git"
   },
+  "bugs": {
+    "url": "https://github.com/saikojosh/Countersign/issues"
+  },
   "name": "countersign",
   "description": "Password strength testing made simple",
   "version": "0.0.1",
