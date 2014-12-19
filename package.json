@@ -15,5 +15,7 @@
   ],
   "dependencies": {
     "async": "0.9.x",
+    "object-assign": "2.0.x",
+    "escape-regexp": "0.0.1"
   }
 }
