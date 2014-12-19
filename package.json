@@ -7,7 +7,7 @@
   "description": "Password strength testing made simple",
   "version": "0.0.1",
   "main": "countersign.js",
-  "author": "Josh Cole <saikojosh@gmail.com>",
+  "author": "Josh Cole <saikojosh@gmail.com> (http://www.JoshuaCole.me)",
   "contributors": [
     {
       "name": "Josh Cole",
