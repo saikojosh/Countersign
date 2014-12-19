@@ -10,8 +10,15 @@
     "url": "https://github.com/saikojosh/Countersign/issues"
   },
   "name": "countersign",
-  "description": "Password strength testing made simple",
   "version": "0.0.1",
+  "description": "Password strength testing made simple.",
+  "keywords": [
+    "password",
+    "strength",
+    "test",
+    "testing",
+    "security"
+  ],
   "main": "countersign.js",
   "author": "Josh Cole <saikojosh@gmail.com> (http://www.JoshuaCole.me)",
   "contributors": [
