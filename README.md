@@ -1,5 +1,21 @@
 # Countersign
-Countersign is **password strength testing made simple**. All you need to do is provide a few simple values when you instantiate Countersign and it will score given passwords against various tests. Each test that is passed will score 1 point.
+Countersign is **password strength testing made simple**. All you need to do is provide a few simple values when you instantiate Countersign and it will score given passwords against various tests. Each successful test will score 1 point, if you add 10 tests you'll score a maximum of 10 points!
+
+
+# Tests
+
+### Inbuilt Tests
+These tests come as standard, to use them specify `true` or a number to represent the required number of characters, e.g. if you specify `digits: 4` the password will need to contain 4 separate digits to pass the test. All tests are *off* by default.
+* **length** - Minium length of the password.
+* **letters** - Tests for letters (case insensitive).
+* **digits** - Tests for digits 0-9.
+* **uppercase** - Tests for uppercase letters.
+* **lowercase** - Tests for lowercase letters.
+* **whitespace** - Tests for whitespace (spaces, tabs, etc).
+* **punctuation** - Tests for a whole host of punctuation characters. 
+
+### Custom Tests
+You can add any number of custom tests with `cs.addTest()`. And yes, your tests will still only score 1 point if passed successfully.
 
 
 # Example Usage
@@ -100,7 +116,11 @@ cs.addTest('customTest', function (input, setting, finish) {
 });
 ```
 
-##### Test Parameters
+##### Parameters
+* **testName** - The name of the test.
+* **testFn** - The actual test function.
+
+##### testFn Parameters
 * **input** - This will be the password.
 * **setting** - This will either be `true` or a value given during instantiation.
 * **finish** - The callback. This must be called to continue with the testing.
