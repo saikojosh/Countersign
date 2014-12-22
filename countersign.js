@@ -226,6 +226,9 @@ var Helpers = {
         if (success) { score++; }
         maxScore++;
 
+        // If a required test failed the password fails.
+        if (!success && required) { overallSuccess = false; }
+
         // Continue to next test.
         return next(null);
 
@@ -237,7 +240,7 @@ var Helpers = {
 
       // Construct result object.
       var result = {
-        success:     (score >= minScore),
+        success:  (overallSuccess && (score >= minScore)),
         score:    score,
         minScore: minScore,
         maxScore: maxScore,
