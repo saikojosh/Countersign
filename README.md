@@ -7,7 +7,7 @@ You can use `cs.score()` to get the score, or `cs.test()` to ensure the password
 # Tests
 
 ### Inbuilt Tests
-These tests come as standard, to use them specify `true` or a number to represent the required number of characters, e.g. if you specify `digits: 4` the password will need to contain 4 separate digits to pass the test. All tests are *off* by default.
+These tests come as standard, to use them specify `true` or a number to represent the required number of characters, e.g. if you specify `digits: 4` the password will need to contain 4 separate digits to pass the test. By default all tests are run, but they won't automatically cause the password to fail.
 * **length** - Minimum length of the password. Takes a number only.
 * **lowercase** - Tests for lowercase letters.
 * **uppercase** - Tests for uppercase letters.
