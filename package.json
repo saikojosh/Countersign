@@ -10,7 +10,7 @@
     "url": "https://github.com/saikojosh/Countersign/issues"
   },
   "name": "countersign",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Password strength testing made simple.",
   "keywords": [
     "password",
