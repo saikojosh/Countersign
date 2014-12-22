@@ -190,16 +190,21 @@ var Helpers = {
       return;
     }
 
-    var testResults = {};
-    var score       = 0;
-    var maxScore    = 0;
-    var settingKeys = Object.keys(settingsList);
+    var testResults    = {
+      required: {},
+      optional: {}
+    };
+    var overallSuccess = true;
+    var score          = 0;
+    var maxScore       = 0;
+    var settingKeys    = Object.keys(settingsList);
 
     // Cycle through the tests.
     async.each(settingKeys, function (key, next) {
 
       var setting   = settingsList[key];
       var test      = testsList[key];
+      var required  = Boolean(setting);
       var inputCopy = input;  //ensure the input can't be manipulated by a custom test.
 
       // Invalid test mean we drop this test.
@@ -214,7 +219,10 @@ var Helpers = {
         if (err) { return next(err); }
 
         // Store the result of the test.
-        testResults[key] = success;
+        if (required) { testResults.required[key] = success; }
+        else          { testResults.optional[key] = success; }
+
+        // Score the test.
         if (success) { score++; }
         maxScore++;
 
@@ -230,10 +238,13 @@ var Helpers = {
       // Construct result object.
       var result = {
         success:     (score >= minScore),
-        score:       score,
-        minScore:    minScore,
-        maxScore:    maxScore,
-        testResults: testResults
+        score:    score,
+        minScore: minScore,
+        maxScore: maxScore,
+        testResults: {
+          required: testResults.required,
+          optional: testResults.optional
+        }
       };
 
       return callback(null, result);
