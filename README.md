@@ -141,7 +141,7 @@ If you pass an error as the first parameter of `finish()` it will not be thrown,
 
 
 ### > cs.test()
-Runs every test against the given password, and then passes a 'success' boolean and result object to the callback. Success will only be true if all the required tests have passed successfully *and* the score is above the minimum score threshold. The actual score achieved can be found via `result.score`.
+Runs every test against the given password, and then passes a 'success' boolean and result object to the callback. Success will only be `true` if all the required tests have passed successfully *and* the score is above the minimum score threshold. The actual score achieved can be found via `result.score`.
 
 ##### Usage
 ```javascript
@@ -155,7 +155,7 @@ cs.test('abc123', 5, function (err, success, result) { ... });
 
 ##### Callback Parameters
 * **err** - If an error has occurred it will be given here, otherwise `null`.
-* **success** - True if all required tests have passed and the minimum score threshold has been achieved.
+* **success** - Will be `true` if all required tests have passed and the minimum score threshold has been achieved.
 * **result** - A hash of all the results.
 
 ### > cs.score()
