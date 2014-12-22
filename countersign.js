@@ -202,9 +202,6 @@ var Helpers = {
       var test      = testsList[key];
       var inputCopy = input;  //ensure the input can't be manipulated by a custom test.
 
-      // Falsy values mean we drop this test.
-      if (!Boolean(setting)) { return next(null); }
-
       // Invalid test mean we drop this test.
       if (typeof test !== 'function') {
         throw new Error('Invalid setting "' + key + '" specified, there is no such test.');
