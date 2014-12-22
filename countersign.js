@@ -3,6 +3,8 @@
  * Password strength testing made simple.
  */
 
+var path         = require('path');
+var fs           = require('fs');
 var async        = require('async');
 var escapeRegExp = require('escape-regexp');
 var objectAssign = require('object-assign');
