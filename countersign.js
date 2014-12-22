@@ -12,7 +12,7 @@ var objectAssign = require('object-assign');
  */
 function Countersign (options) {
 
-  // Instance variables defaults.
+  // Instance variable defaults.
   this.tests = {};
   this.settings = {
     length:      false,
