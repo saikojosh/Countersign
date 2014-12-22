@@ -17,7 +17,7 @@ These tests come as standard, to use them specify `true` or a number to represen
 * **common** - Tests for common, easily guessed passwords. Takes `true` or `false` only.
 
 ### Custom Tests
-You can add any number of custom tests with `cs.addTest()`. And yes, your tests will still only score 1 point if passed successfully.
+You can add any number of custom tests with `cs.addTest()`. And yes, your tests will still only score 1 point if passed successfully. All custom tests *must* be passed for the password to pass successfully.
 
 
 # Example Usage
