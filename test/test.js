@@ -3,16 +3,15 @@ var Countersign = require('../countersign.js');
 // Specify the tests when creating a new Countersign.
 var cs = new Countersign({
   length:      8,
-  letters:     false,
   digits:      false,
   uppercase:   true,
   lowercase:   false,
   whitespace:  false,
-  punctuation: false
+  punctuation: true
 });
 
 // Or set tests later.
-cs.setTest('punctuation', 1);
+cs.setTest('punctuation', false);
 cs.setTest({
   whitespace: true,
   digits:     2
