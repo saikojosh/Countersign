@@ -179,6 +179,24 @@ var Helpers = {
   },
 
   /*
+   * Passes true to the callback if the
+   * callback(err, match);
+   */
+  dictionaryMatch: function (input, name, callback) {
+
+    Helpers.loadDictionary(name, function (err, dictionary) {
+
+      if (err) { return callback(err); }
+
+      // See if the password is in the dictionary.
+      var match = (dictionary.indexOf(input) > -1);
+      return callback(null, match);
+
+    });
+
+  },
+
+  /*
    * Loads a dictionary file.
    * callback(err, dictionary);
    */
