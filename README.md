@@ -178,7 +178,7 @@ cs.score('abc123', function (err, score, result) { ... });
 
 # Changelog
 
-### 0.1.0
+### v0.1.0 (2014-12-22)
 * **[+]** Added the 'common' test to check a dictionary for common, easy to guess passwords.
 * **[^]** `cs.test()` now only returns `true` if all specified tests have passed.
 * **[^]** All tests are now always run with the results passed to the final callback.
