@@ -16,7 +16,6 @@ function Countersign (options) {
   this.tests = {};
   this.settings = {
     length:      false,
-    letters:     false,
     digits:      false,
     uppercase:   false,
     lowercase:   false,
@@ -30,11 +29,6 @@ function Countersign (options) {
   // Add the default tests.
   this.addTest('length', function (input, setting, finish) {
     var success = (input.length >= setting);
-    return finish(null, success);
-  });
-
-  this.addTest('letters', function (input, setting, finish) {
-    var success = Helpers.charMatch(input, setting, 'a-z', 'i');
     return finish(null, success);
   });
 
@@ -78,12 +72,12 @@ function Countersign (options) {
 /*
  * Apply the given settings to the given tests.
  * [Usage]
- *  [1] setTest({ length: 10, letters: true });
+ *  [1] setTest({ length: 10, lowercase: true });
  *  [2] setTest('length', 10);
  */
 Countersign.prototype.setTest = function (p1, p2) {
 
-  // [1] setTest({ length: 10, letters: true });
+  // [1] setTest({ length: 10, lowercase: true });
   if (typeof p1 === 'object' && typeof p2 === 'undefined') {
     objectAssign(this.settings, p1);
   }
