@@ -20,7 +20,8 @@ function Countersign (options) {
     uppercase:   false,
     lowercase:   false,
     whitespace:  false,
-    punctuation: false
+    punctuation: false,
+    common:      false
   };
 
   // Save options.
@@ -65,6 +66,13 @@ function Countersign (options) {
     ];
     var success = Helpers.charMatch(input, setting, symbols.join());
     return finish(null, success);
+  });
+
+  this.addTest('common', function (input, setting, finish) {
+    Helpers.dictionaryMatch(input, 'common', function (err, match) {
+      if (err) { return finish(err); }
+      return finish(null, !match);
+    });
   });
 
 };
