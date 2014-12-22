@@ -179,6 +179,37 @@ var Helpers = {
   },
 
   /*
+   * Loads a dictionary file.
+   * callback(err, dictionary);
+   */
+  loadDictionary: function (name, callback) {
+
+    var filename = path.join(__dirname, 'dictionaries/' + name + '.json');
+
+    fs.readFile(filename, function (err, data) {
+
+      if (err) {
+        throw new Error('Unable to load dictionary "' + name + '": ' + err);
+        return;
+      }
+
+      // Try and parse as JSON.
+      try {
+        var dictionary = JSON.parse(data);
+      }
+      catch (err) {
+        throw new Error('Unable to parse dictionary "' + name + '".');
+        return;
+      }
+
+      // Pass dictionary to callback
+      return callback(null, dictionary);
+
+    });
+
+  },
+
+  /*
    * Runs all the tests and returns a result object.
    * callback(err, result);
    */
